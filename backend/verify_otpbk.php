@@ -44,6 +44,7 @@ if ($submittedOtp === strval($generatedOtp)) {
     $username = $user_data['first_name'] . ' ' . $user_data['last_name']; // Combine first and last name for username
     $phone = $user_data['phone'];
     $password = $user_data['password']; // No password hashing
+    $user_type = $user_data['user_type'];
 
     // Database configuration
     $host = "localhost";
@@ -58,7 +59,7 @@ if ($submittedOtp === strval($generatedOtp)) {
     }
 
     // Insert data into user_details table
-    $INSERT = "INSERT INTO user_details (username, email, phone, password) VALUES (?, ?, ?, ?)";
+    $INSERT = "INSERT INTO user_details (username, email, phone, password, usertype) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($INSERT);
 
     // Check if prepare was successful
@@ -69,7 +70,7 @@ if ($submittedOtp === strval($generatedOtp)) {
         exit();
     }
 
-    $stmt->bind_param("ssss", $username, $sessionEmail, $phone, $password);
+    $stmt->bind_param("sssss", $username, $sessionEmail, $phone, $password, $user_type);
 
     if ($stmt->execute()) {
         // Data inserted successfully

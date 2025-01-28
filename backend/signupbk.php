@@ -11,6 +11,7 @@ $last_name = $_POST['last_name'] ?? '';
 $email = $_POST['email'] ?? '';
 $phone = $_POST['phone'] ?? '';
 $password = $_POST['password'] ?? '';
+$usertype = $_POST['usertype'];
 
 // Validate inputs
 if (empty($first_name) || empty($last_name) || empty($email) || empty($phone) || empty($password)) {
@@ -96,7 +97,8 @@ try {
         'first_name' => $first_name,
         'last_name' => $last_name,
         'phone' => $phone,
-        'password' => $password
+        'password' => $password,
+        'user_type' => $usertype,
     ];
 
     // Save current email for reference
