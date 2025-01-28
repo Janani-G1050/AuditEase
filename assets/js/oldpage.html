@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Started - Finance Web App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      /* background-color: rgba(0, 179, 255, 0.155); */
+      background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 75%);
+
+      color: #333;
+    }
+    /* nav{
+      height: 100%;
+      background:white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding:0rem calc((100vw-1300px)/2);
+    } */
+
+    .container {
+      display: flex;
+      max-width: 1200px;
+      width: 100%;
+      height: 80vh;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideIn 1.2s ease-in-out forwards;
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .text-content, .image-content {
+      padding: 40px;
+    }
+
+    .text-content {
+      flex: 1;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in-out 0.3s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .text-content h1 {
+      font-size: 2.5em;
+      color: #102C57;
+      margin-bottom: 10px;
+    }
+
+    .text-content p {
+      margin-bottom: 20px;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .text-content ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .text-content ul li {
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
+
+    .get-started-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      letter-spacing: .8px;
+      background-color: #background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+;
+      color: black;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .get-started-btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: width 0.3s ease;
+    }
+
+    .get-started-btn:hover::after {
+      width: 100%;
+    }
+
+    .get-started-btn:hover {
+      background-color: #155bb5;
+    }
+
+    .image-content {
+      flex: 1;
+      background-image: url('img_3.avif'); /* Replace with actual image URL */
+      background-size: cover;
+      background-position: center;
+      animation: fadeIn 1.5s ease-in-out 0.5s forwards;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .image-content {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- <nav>
+    <div class="logo">AuditEase</div>
+  </nav> -->
+  <div class="container">
+    <div class="text-content">
+      <h1>Welcome to AuditEase</h1>
+      <p><em>Your Finance Partner is here!!</em></p>
+      
+      <p>AuditEase is a comprehensive web application designed to simplify financial management for both individuals and businesses. Our platform allows users to seamlessly organize, track, and audit finances with ease, offering separate sections for personal and business financial management..</p>
+      <ul>
+        <li><strong>Simplify</strong> </li>
+        <li><strong>Organise</strong></li>
+        <li><strong>Empower</strong> </li>
+        
+      </ul>
+
+      <a href="purpose.html" class="get-started-btn">Get Started</a>
+    </div>
+
+    <!-- Right Content (Image) -->
+    <div class="image-content"></div>
+  </div>
+</body>
+</html>

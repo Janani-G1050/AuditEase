@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Upload - Audit Ease</title>
+    <style>
+        /* Resetting some basic styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #87ceeb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Back and View button styling */
+        .back-button,
+        .view-button {
+            position: absolute;
+            top: 20px;
+            font-size: 14px;
+            color: #42A5F5;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .back-button {
+            left: 20px;
+            color: black;
+        }
+
+        .view-button {
+            right: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            width: 500px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .upload-section {
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px dashed #42A5F5;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #42A5F5;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+
+        .upload-section:hover {
+            background-color: #E3F2FD;
+        }
+
+        #file-upload {
+            display: none;
+        }
+
+        .verify-btn {
+            background-color: #42A5F5;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .verify-btn:hover {
+            background-color: #1E88E5;
+        }
+
+        .footer-text {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Back button -->
+    <button class="back-button" onclick="window.history.back();">&#8592; Back</button>
+    <!-- View button -->
+    <button class="view-button">View</button>
+
+    <div class="container">
+        <h2>Document Upload - Audit Ease</h2>
+        <!--inga -->
+        <form action="backend/filesbk.php" method="POST" id="upload-Form" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="username">Title</label>
+                <input type="text" id="title" name="title" placeholder="Enter your Title" required>
+            </div>
+            <br>
+            <label for="file-upload" class="upload-section">
+                <img src="upload.avif" alt="Upload Icon" width="40" style="vertical-align: middle; margin-right: 10px;">
+                Drag and drop your file here or click to upload
+            </label>
+            <input type="file" name="doc" id="file-upload">
+
+            <button type="submit" class="verify-btn">Verify</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

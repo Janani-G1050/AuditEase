@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter OTP</title>
+    <style>
+        /* Same styling as before */
+    </style>
+</head>
+
+<body>
+    <form action="backend/verify_otpbk.php" method="POST">
+        <h2>Enter OTP</h2>
+        <input type="text" name="otp" class="otp-input" maxlength="6" required placeholder="Enter your 6-digit OTP">
+        <button type="submit">Verify OTP</button>
+    </form>
+</body>
+
+</html>
